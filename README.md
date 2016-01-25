@@ -1,1 +1,1 @@
-# GMS code for Shazam
+# Glasgow Memories Server code for Shazam
