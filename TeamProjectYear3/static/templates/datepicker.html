@@ -1,0 +1,26 @@
+<div class="panel bluePanel" style="margin:20px">
+	<div class="panel-heading" style="padding: 1px 3px 1px 10px"><h4>Pick a Date Range</h4></div>
+	<div class="panel-body" style="padding: 3px 3px 3px 3px">
+		<form name="datepickerForm" role="form">
+			<div class="form-group">
+				<label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i>From:</label><br>
+				<input type="text" class="form-control" ng-model="from_date" data-max-date="{{to_date}}" placeholder="Date" bs-datepicker>
+				<br/>
+				<div class="form-group" ng-class="{'has-error': timepickerForm.time2.$invalid}">
+					<input type="text" class="form-control" size="5" ng-model="from_time" data-time-format="HH:mm" data-time-type="number" data-autoclose="1" name="time2" bs-timepicker placeholder="Time" style="margin-bottom: 5px">
+				</div>
+			</div>
+		</form>
+		<label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i>Until:</label><br>
+		<form name="datepickerForm" role="form">
+			<div>
+				<input type="text" class="form-control" ng-model="to_date" data-min-date="{{from_date}}" placeholder="Date" bs-datepicker>
+			</div>
+			<br/>
+			<div class="form-group" ng-class="{'has-error': timepickerForm.time2.$invalid}">
+				<input type="text" class="form-control" size="5" ng-model="to_time" data-time-format="HH:mm" data-time-type="number" data-autoclose="1" name="time2" bs-timepicker placeholder="Time">
+			</div>
+		</form>
+		<button id="filterButton" class="btn btn-default" ng-click="updateSelectedDate(from_date, to_date, from_time, to_time)">Filter</button>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+{
+	id: ObjectId,
+	user: ObjectId,
+	password: String, // Hashed password
+	protocol: {enum: ["local", "openid", "oauth", "oauth2"]}, //  what type of authentication the user is using
+	provider: String, // the name of the provider, local, facebook
+	identifier: String, // id that the provider supplied,
+	tokens: json, // oauth authentication gives back token and tokenSecret, where oauth2 gives back accessToken and refreshToken
+}

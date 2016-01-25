@@ -1,0 +1,33 @@
+<h1 class="personalTitle">Uploading Lifelogs</h1>
+<h3 class="personalSubtitle">Please use  <span style="font-weight: bolder">Google Chrome</span> for best experience and select a suitable option to upload your contents</h3>
+<h3 class="personalSubtitle">If you are uploading individual images using <span style="font-weight: bolder">Mozilla Firefox</span>, please don't upload more than 200 at a time</h3>
+<div class="upload-buttons">
+	<button class="btn btn-primary" ng-model="files" ng-file-select="upload_file($files, 'csv')" multiple="false" data-trigger="hover" data-title="Upload a .csv file from a GPS device" bs-tooltip>Upload a CSV File</button>
+	<button class="btn btn-primary" ng-model="files" ng-file-select="upload_file($files, 'image')" multiple="true" data-trigger="hover" data-title="Upload an image or images from the Autographer device" bs-tooltip>Upload Images</button>
+	<button class="btn btn-primary" ng-model="files" ng-file-select="upload_file($files, 'video')" multiple="true" data-trigger="hover" data-title="Upload a video or videos from a lifelogging device" bs-tooltip>Upload Videos</button>
+	<button class="btn btn-primary" ng-model="files" ng-file-select="upload_file($files, 'zip')" multiple="true" data-trigger="hover" data-title="Upload a zip file of a folder containing all of your images" bs-tooltip>Upload Zip</button>
+	<button class="btn btn-primary" ng-model="files" ng-file-select="upload_file($files, 'imagetable')" multiple="true" data-trigger="hover" data-title="Upload an image_table.txt file from the Autographer device" bs-tooltip>Upload Image Table</button>
+</div>
+<br>
+<ul class="portfolio" ng-hide="show_progress">
+	<li ng-repeat="image in getSelected() track by $index" image-viewer>
+		<img class="portfolio" ng-src="{{image.dataStr}}"/>
+		<br>
+		<input type="checkbox" ng-model="image.skip" ng-true-value="true" ng-false-value="false"> Skip
+	</li>
+</ul>
+<div ng-show="show_progress" class="confirm-button">
+	<h4 class="personalSubtitle">Uploading in progress: {{doneUploading}}/{{toBeUploaded}}</h4>
+	<br>
+</div>
+<div ng-repeat="bar in upload_progress" ng-if="bar.progress!=0" style="margin-bottom:10px">
+	<div class="progress-bar progress-bar-striped active" role="progressbar" style="width: {{bar.progress+'%'}}">
+		<span>{{bar.progress+'%'}}</span>
+	</div>
+</div>
+<div ng-show="done" class="confirm-button">
+	<h2 class="personalTitle">Uploding is Complete</h2>
+</div>
+<div class="confirm-button">
+	<button ng-show="getSelected().length > 0 && !show_progress" class="btn btn-primary" ng-click="send_files();show_progress = true"> Confirm your selection </button>
+</div>

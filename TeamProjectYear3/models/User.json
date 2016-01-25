@@ -1,0 +1,10 @@
+{
+	id: ObjectId, // automatically created by mongo for each document
+	username: String, // Is this needed? can we stick only to email addresses?
+	email: String,
+	defaultUploadType: {type: Boolean, default: false}, // make sure that the user don't get anything public if they don't want to
+	videos: [{type: ObjectId}], // I don't know what object data manager we are using, this is for mongoose.
+	images: [{type: ObjectId}], // Waterline is better in some ways alternative, but might be tightly coupled to sails, which we are not using.
+	gps: [{type: ObjectId}],
+	passports: [ObjectId] // easier population and authentication, probably ORM reference only and wont be stored in the db
+}

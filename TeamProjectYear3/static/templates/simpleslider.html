@@ -1,0 +1,11 @@
+<div class="slider">
+	<ul>
+		<li class="slide" ng-repeat="image in previewImages" ng-show="image.visible">
+			<img class="slideImages" ng-src="{{image.url}}" />
+		</li>
+	</ul>
+	<div class="arrowsSlider">
+		<a href="" ng-click="prev()"><img src="static/img/left.png"/></a>
+		<a href="" ng-click="next()"><img src="static/img/right.png"/></a>
+	</div>
+</div>

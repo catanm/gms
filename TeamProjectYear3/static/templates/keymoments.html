@@ -1,0 +1,44 @@
+<div class="panel-body headText">
+	<h2 class="personalTitle">A Glimpse of Your Key Moments</h2>
+	<h4 class="personalSubtitle">
+	Archive after removing poor quality and visually similar images.
+	<br>
+	Pick a <span style="font-weight: bolder">date range</span> or press <span style="font-weight: bolder">"Next"</span> to explore more
+	</h4>
+</div>
+<div class="modal fade" id="viewerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="width:500px">
+		<div class="modal-content">
+			<div class="slider">
+				<ul>
+					<li class="slide" ng-repeat="image in previewImages" ng-show="image.visible">
+						<div style="background-color: white;">
+							<img class="slideImages" ng-src="{{image.url}}" />
+							<p>{{image.date | date:"d MMMM yyyy"}}</p>
+						</div>
+					</li>
+				</ul>
+				<div class="arrowsSlider">
+					<a ng-click="prev()"><img src="static/img/left.png"/></a>
+					<a ng-click="next()"><img src="static/img/right.png"/></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+	<div ng-show="!images || images.keys.length == 0" style="padding: 1px 3px 1px 10px">
+		<h4>No images, select a different filter or upload some.</h4>
+	</div>
+	<h4>Page {{getCurrentPage() + 1}}</h4>
+	<div class="panel bluePanel" ng-repeat="date in images.keys">
+		<div class="panel-heading" style="padding: 1px 3px 1px 10px"><h4>{{date | date:"d MMMM yyyy"}}</h4></div>
+		<div class="panel-body">
+			<ul class="portfolio">
+				<li ng-repeat="image in images[date] track by $index" image-viewer><img ng-click="show_picture($index, images[date])" ng-src="{{image.url}}"/></li>
+			</ul>
+		</div>
+	</div>
+	<button class="btn btn-primary" ng-if="hasPrevious()" ng-click="previousPage()"> Previous </button>
+	<button class="btn btn-primary" ng-if="hasNext()" ng-click="nextPage()" style="margin-left: 5px"> Next </button>
+</div>

@@ -1,0 +1,176 @@
+/*######################################*/
+/*Colors for the template */
+/*######################################*/
+
+body {
+    background-color: white;
+}
+
+#footer {
+    background-color: #1f9bc9;
+}
+
+.cta1 {
+    background-color:#18bcf9;
+}
+
+
+
+
+
+
+.spinner > div,
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span,
+.cta2 {
+    background-color: #18bcf9;
+}
+
+.subscribe-submit, 
+.subscribe-submit:active {
+    background-color: #f26822;
+}
+
+
+
+
+#fb_icon:hover,
+#tw_icon:hover, 
+#in_icon:hover, 
+#g_icon:hover, 
+#pin_icon:hover, 
+#fli_icon:hover,
+.services_icon {
+    fill:#18bcf9;
+}
+
+
+
+
+
+#fb_icon, 
+#tw_icon, 
+#in_icon, 
+#g_icon, 
+#pin_icon, 
+#fli_icon {
+    fill: rgba(255,255,255,1);
+}
+
+
+
+
+
+#preview {
+    background-color:#fffcd2;
+}
+
+
+.feature_icon {
+    fill:#d8d8d8;
+}
+
+.arrow_up,
+.arrow_down {
+    fill:#f0f0f0;
+}
+
+.arrow_down:hover,
+.arrow_up:hover {
+    fill:#dddddd;
+}
+
+#features_3, .arrows_box_bg {
+    background-color:#f7f8fa;
+}
+
+.owl-theme .owl-controls .owl-page span{
+	background-color: #d8d8d8;
+}
+
+
+/*######################################*/
+/*ARROWS and SEPARATOR #################*/
+/*######################################*/
+
+.arrows_box {
+    width:100%;
+    height:2rem;
+    position: relative;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.blue_arrows_box {
+    width:100%;
+    height:2rem;
+    position: relative;
+    background-color: #0D77B6;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.arrows_box_bg {
+    margin-top:-1.45rem;
+    background:none;
+}
+
+.arrows_no_border {
+    border-bottom:none;
+}
+
+.arrows {
+    display:inline;
+    left:50%;
+    margin-bottom:1.5rem;
+    margin-left:-3.1rem;
+    position:relative;
+    z-index:999;
+}
+
+.arrow_single {
+    display:inline;
+    left:50%;
+    margin-bottom:1.5rem;
+    margin-left:-1.55rem;
+    position:relative;
+    z-index:999;
+}
+
+.arrow_down {
+    margin:0;
+    width: 4rem;
+    height: 4rem;
+    padding:0.2rem;
+    /*background-color:white;*/
+    background-color: rgb(13, 119, 182);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    transform:rotate(89deg);
+    -webkit-transform:rotate(89deg);
+    -moz-transform:rotate(89deg);
+    -o-transform:rotate(89deg);
+    -ms-transform:rotate(89deg);
+    ms-transform:rotate(89deg);
+}
+
+.arrow_up {
+    margin:0;
+    width: 4rem;
+    height: 4rem;
+    padding:0.2rem;
+    /*background-color:white;*/
+    background-color: rgb(13, 119, 182);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    transform:rotate(89deg);
+    -webkit-transform:rotate(89deg);
+    -moz-transform:rotate(89deg);
+    -o-transform:rotate(89deg);
+    -ms-transform:rotate(89deg);
+    ms-transform:rotate(89deg);
+}
+
+.arrow_down:hover, .arrow_up:hover {
+    cursor: pointer;
+}

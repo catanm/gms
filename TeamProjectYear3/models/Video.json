@@ -1,0 +1,11 @@
+{
+	id: ObjectId, // Automatically handled by mongo (or ODM)
+	user: ObjectId, // link to the uploader
+	filePath: String, // relative path to the file. from the relative path the absolute one depending on the directory where the server is running.
+	gps: ObjectId, // since the video can be coupled with gps data (or can it?) we need to keep the link.
+	timeStamp: Date, // The exact time when the video has started
+	fileName: String, // we might want to keep the original name of the video if we allow downloading and save all files with username/email + current date in ms all to base64 so no duplicate names happen
+	title: String, // The user might want to give a title to the video
+	description: String, // The user might want to give a description for the video as well.
+	comments: [ObjectId] // The link to he comments for this video
+}

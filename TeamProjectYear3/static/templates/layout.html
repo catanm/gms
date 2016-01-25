@@ -1,0 +1,23 @@
+<div ui-view="topbar"></div>
+<div class="container">
+	<div class="alert alert-dismissible" role="alert" ng-class="{'alert-danger':alert.type=='error','alert-success':alert.type=='success'}" ng-show="alert.message">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		{{alert.message}}
+	</div>
+	<div class="col-md-12" ui-view="full2"></div>
+	
+	<div class="col-md-4 after-topbar">
+		<div ui-view="left1"></div>
+		<div ui-view="left2"></div>
+		<div ui-view="left3"></div>
+	</div>
+	
+	<div class="col-md-8 after-topbar">
+		<div ui-view="right"></div>
+		<div ui-view="right2"></div>
+	</div>
+	
+	<div class="col-md-12" ui-view="full"></div>
+	
+</div>
+<div ui-view="homePlaceholders"></div>

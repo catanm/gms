@@ -1,0 +1,172 @@
+@font-face {
+    font-family: AmericanType;
+    src: url("../fonts/american_typewriter.ttf");
+}
+@font-face {
+    font-family: RalewayReg;
+    src: url("../fonts/Raleway-Regular.ttf");
+}
+.navbar-my{
+	background-color:#0D77B6;
+	border-color:#0D77B6;
+	color: white !important;
+}
+.headText{
+	font-family: RalewayReg;
+	font-size: 20px;
+}
+.bodyText{
+	font-family: RalewayReg;
+   font-size: 20px;
+	color: white;
+}
+
+.navbar-my .navbar-brand{
+	color:white;
+	font-family: AmericanType;
+}
+.navbar-my .navbar-brand:hover .navbar-my .navbar-brand:focus{
+	color:white;
+	background-color:transparent;
+}
+.navbar-my .navbar-text{
+	color:white;
+}
+.navbar-my .navbar-nav > li > a {
+	color:white;
+}
+.navbar-my .navbar-nav>li>a:hover,.navbar-my .navbar-nav>li>a:focus{
+	color:#333;background-color:transparent;
+}
+.navbar-my .navbar-nav>.active>a,.navbar-my .navbar-nav>.active>a:hover,.navbar-my .navbar-nav>.active>a:focus{
+	color:#555;
+	background-color:#e7e7e7;
+}
+.navbar-my .navbar-nav>.disabled>a,.navbar-my .navbar-nav>.disabled>a:hover,.navbar-my .navbar-nav>.disabled>a:focus{
+	color:#ccc;background-color:transparent;
+}
+.navbar-my .navbar-toggle{
+	border-color:#ddd;
+}
+.navbar-my .navbar-toggle:hover,.navbar-my .navbar-toggle:focus{
+	background-color:#ddd;
+}
+.navbar-my .navbar-toggle .icon-bar{
+	background-color:#888;
+}
+.navbar-my .navbar-collapse,.navbar-my .navbar-form{
+	border-color:#e7e7e7;
+}
+.navbar-my .navbar-nav>.open>a,.navbar-my .navbar-nav>.open>a:hover,.navbar-my .navbar-nav>.open>a:focus{
+	color:#555;background-color:#e7e7e7;
+}
+@media (max-width:767px){.navbar-my .navbar-nav .open .dropdown-menu>li>a{color:#777;}
+.navbar-my .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-my .navbar-nav .open .dropdown-menu>li>a:focus{color:#0D77B6;background-color:transparent;}
+.navbar-my .navbar-nav .open .dropdown-menu>.active>a,.navbar-my .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-my .navbar-nav .open .dropdown-menu>.active>a:focus{
+	color:#555;background-color:#e7e7e7;}
+.navbar-my .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-my .navbar-nav .open .dropdown-menu>.disabled>a:hover,.navbar-my .navbar-nav .open .dropdown-menu>.disabled>a:focus{
+	color:#ccc;background-color:transparent;}}
+.navbar-my .navbar-link{
+	color:#777;
+}
+.navbar-my .navbar-link:hover{
+	color:#333;
+}
+.navbar-my .btn-link{
+	color:#777;
+}
+.navbar-my .btn-link:hover,.navbar-my .btn-link:focus{
+	color:#0D77B6;
+}
+.navbar-my .btn-link[disabled]:hover,fieldset[disabled] .navbar-my .btn-link:hover,.navbar-my .btn-link[disabled]:focus,fieldset[disabled] .navbar-my .btn-link:focus{
+	color:#ccc;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+	background-color: #0D77B6;
+}
+
+/*#intro { 
+    background: url(../images/intro.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+}
+#home { 
+    background: url(../images/home.jpg) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+}
+#about { 
+    background: url(../images/about.png) 50% 0 fixed; 
+    height: auto;
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+    color: #fff;
+}
+.hero-unit {
+			background-color: #fff;
+		    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.media-object { width: 64px; height: 64px; padding-bottom: 30px }*/
+
+.whitePlaceholder {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.bluePlaceholder {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.05);
+    background-color: #0D77B6;
+}
+
+#intro {  
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative;
+	 padding-top: 50px; 
+    padding-bottom: 50px;
+    background-color: white;
+}
+#lifelogImages {  
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    background-color: #0D77B6;
+}
+#lifeLogVideos {  
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative;
+	 padding-top: 50px; 
+    padding-bottom: 50px;
+    background-color: white;
+}
+#heatmapSection {  
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    background-color: #0D77B6;
+}
+.hero-unit {
+			background-color: #fff;
+		    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.media-object { width: 64px; height: 64px; padding-bottom: 30px }

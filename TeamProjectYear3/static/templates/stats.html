@@ -1,0 +1,7 @@
+<div>
+	<div class="page-header" style="margin-bottom: -5%; padding-top: 20px" ng-controller="StatsController">
+		<h1 ng-if="(pageType == 'stats')">Lifelog Memories Server Statistics</h1>
+		<h1 ng-if="(pageType == 'pstats') && loggedUser">{{loggedUser.username || loggedUser.email}}'s Statistics</h1>
+		<h1 ng-if="(pageType == 'pstats') && !loggedUser">Log in to see your statistics</h1>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+{
+	id: ObjectId,
+	user: ObjectId, // Link to the user posting
+	timeStamp: Date, // String only if the ODM doesn't support Date objects (it might be handled the same way)
+	upVote: Integer,
+	downVote: Integer, //don't we want to keep trach of who voted so no bots hit the website?
+	commentBody: String,
+	replies: [ ObjectId ] 
+}

@@ -1,0 +1,29 @@
+<div>
+	<div class="panel-body headText">
+		<h2 class="personalTitle"> A Glimpse of Your Personal Videos Archive</h2>
+		<h4 class="personalSubtitle">
+		This page shows a collection of 5 most recently captured Google Glass videos
+		<br>
+		Pick a <span style="font-weight: bolder">date range</span> to explore more
+		</h4>
+	</div>
+	<div>
+		<div ng-show="!videos || videos.keys.length == 0" style="padding: 1px 3px 1px 10px"><h4>No videos, select a different filter or upload some.</h4></div>
+		<h4>Page {{getCurrentPage() + 1}}</h4>
+		<div class="panel bluePanel" ng-repeat="date in videos.keys">
+			<div class="panel-heading" style="padding: 1px 3px 1px 10px"><h4>{{date | date:"d MMMM yyyy"}}</h4></div>
+			<div class="panel-body">
+				<ul class="videosss">
+					<li ng-repeat="video in videos[date] track by $index">
+						<video controls>
+							<source ng-src="{{video.url}}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<button class="btn btn-primary" ng-if="hasPrevious()" ng-click="previousPage()"> Previous </button>
+		<button class="btn btn-primary" ng-if="hasNext()" ng-click="nextPage()" style="margin-left: 5px"> Next </button>
+	</div>
+</div>

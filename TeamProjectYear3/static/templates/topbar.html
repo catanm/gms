@@ -1,0 +1,123 @@
+<!-- fluid navigation bar -->
+<nav class="navbar navbar-my navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" ng-click="personal=false" href="." style="font-size: 38px">
+                Lifelog Memories Server
+            </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a ng-click="personal=false" href=".">Home</a></li>
+                <li><a>Today</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a>BBC</a></li>
+                        <li class="divider"></li>
+                        <li><a>Daily Record</a></li>
+                        <li class="divider"></li>
+                        <li><a>The Scotsman</a></li>
+                        <li class="divider"></li>
+                        <li><a>Evening Times</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Image <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a>flickr</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Statistics <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!--
+                        <li><a>Glasgow</a></li>
+                        <li class="active"><a>Scotland</a></li>
+                        -->
+                        <li><a ui-sref="main.stats">All Stats</a></li>
+                        <li><a ui-sref="main.pstats">Personal Stats</a></li>
+                    </ul>
+                </li>
+                <li ng-hide="loggedUser">
+                    <a data-toggle="modal" data-target="#loginModal">Register and Login</a>
+                </li>
+                <li class="dropdown" ng-show="loggedUser">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{loggedUser.username || loggedUser.email}}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ui-sref="main.personal.images">Personal</a></li>
+                        <li><a ui-sref="main.upload">Upload</a></li>
+                        <li><a ng-click="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" ng-init="tab='login'">
+        <div class="modal-content" ng-show="tab === 'login'">
+            <div class="modal-header login_modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title" id="modalLabel">Login to Your Account</h2>
+            </div>
+            <div id="modalBody" class="modal-body login-modal">
+                <div class="clearfix"></div>
+                <div id='social-icons-container'>
+                    <div class='modal-body-left'>
+                        <form id="loginForm">
+                            <input type="text" id="email_label" ng-model="email" placeholder="Enter an email" value="" class="form-control login-field">
+                            <input type="password" id="password_label" ng-model="password" placeholder="Password" value="" class="form-control login-field">
+                            <label id="errorLabel"></label>
+                            <input style="color:white;" type="submit" name="submit" ng-click="login(email, password)" value="Login" class="btn modal-login-btn">
+                        </form>
+                    </div>
+                    
+                    <div class='modal-body-right'>
+                        <div class="modal-social-icons">
+                            <a href='/api/auth/facebook/login' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Sign In with Facebook </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                <div class="form-group modal-register-btn">
+                    <button id="registerButton" class="btn modal-login-btn" style="color:white;" ng-click="tab = 'register'"> New User Please Register</button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content" ng-show="tab === 'register'">
+            <div class="modal-header login_modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title" id="modalLabel">Register Your New Account</h2>
+            </div>
+            <div id="modalBody" class="modal-body login-modal">
+                <div class="clearfix"></div>
+                <div id='social-icons-container'>
+                    <div class='modal-body-left'>
+                        <form id="loginForm">
+                            <input type="text" id="email_label" ng-model="email" placeholder="Enter an email" value="" class="form-control login-field">
+                            <input type="password" id="password_label" ng-model="password" placeholder="Password" value="" class="form-control login-field">
+                            <label id="errorLabel"></label>
+                            <input style="color:white;" type="submit" name="submit" ng-click="register(email, email, password)" value="Register" class="btn modal-login-btn">
+                        </form>
+                    </div>
+                    
+                    <div class='modal-body-right'>
+                        <div class="modal-social-icons">
+                            <a href='/api/auth/facebook/login' class="btn btn-primary facebook"> <i class="fa fa-facebook modal-icons"></i> Sign Up with Facebook </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                
+                <div class="form-group modal-register-btn">
+                    <button id="registerButton" class="btn modal-login-btn" style="color:white;" ng-click="tab = 'login'"> Already have an account?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

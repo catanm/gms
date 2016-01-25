@@ -1,0 +1,29 @@
+<div>
+	<div class="panel bluePanel" style="color: black">
+		<div class="panel-heading" style="padding: 1px 3px 1px 10px">
+			<h4 id="selectedMonth">General Statistics</h4>
+		</div>
+		<div class="panel-body">
+			<h4 class="blueheader" style="color: white">Total Users: {{ stats[3][0] }}</h4>
+			<h4 class="blueheader" style="color: white">Total Images: {{ stats[3][1] }}</h4>
+			<h4 class="blueheader" style="color: white">Total Images Size (in MB): {{ stats[4] }} </h4>
+			<h4 class="blueheader" style="color: white">Total Tracks: {{ stats[3][2] }}</h4>
+		</div>
+	</div>
+	<div class="panel bluePanel">
+		<div class="panel-heading" style="padding: 1px 3px 1px 10px">
+			<h4 id="selectedMonth">Image Statistics Filtered By Date Selected </h4>
+		</div>
+		<div class="panel-body">
+			<h4 class="blueheader" style="color: white">Images: {{ stats[3][3] }}</h4>
+		</div>
+	</div>
+	<div class="panel bluePanel">
+		<div class="panel-heading" style="padding: 1px 3px 1px 10px">
+			<h4 id="selectedMonth">GPS Statistics Filtered By Date Selected </h4>
+		</div>
+		<div class="panel-body">
+			<h4 class="blueheader" style="color: white">Tracks: {{ stats[3][4] }}</h4>
+		</div>
+	</div>
+</div>

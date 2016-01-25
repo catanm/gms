@@ -1,0 +1,136 @@
+<section class="arrows_box">
+	<div class="arrows">
+		<svg viewBox="0 0 32 32" class="arrow_down" id="about_arrow_next" data-id="imgSection">
+			<script>
+				$(document).ready(function() {
+					$('.arrow_down, .arrow_up').on('click', function(event){
+						event.preventDefault();
+						var sectionID = $(this).attr("data-id");
+						scrollToID('#' + sectionID, 750);
+					});
+				});
+			</script>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right-arrow"></use></svg>
+	</div>
+</section>
+<!-- Image TABS -->
+<section id="lifelogImages" data-speed="4" data-type="background">
+	<div id="imgSection" class="page-section">
+		<div class="container">
+			<div class="row">
+				<div class="panel bluePlaceholder">
+					<div class="panel-heading">
+						<h2 class="panel-title" style="font-size: 24px; color:white" ng-show="loggedUser">{{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Images
+						</h2>
+						<h2 class="panel-title" style="font-size: 24px; color:white" ng-show="!loggedUser">Lifelog Images
+						</h2>
+					</div>
+					<div class="panel-body bodyText">
+						<div class="modal fade" id="viewerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog" style="width:500px">
+								<div class="modal-content">
+									<div class="slider">
+										<ul>
+											<li class="slide" ng-repeat="image in previewImages" ng-show="image.visible">
+												<img class="slideImages" ng-src="{{image.url}}" />
+												<p>{{image.date | date:"d MMMM yyyy"}}</p>
+											</li>
+										</ul>
+										<div class="arrowsSlider">
+											<a ng-click="prev()"><img src="static/img/left.png"/></a>
+											<a ng-click="next()"><img src="static/img/right.png"/></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div ng-show="!images || images.raw.length == 0" style="padding: 1px 3px 1px 10px"><h4>No images found.</h4></div>
+							<div class="panel-body" style="background-color: #0D77B6">
+								<ul class="portfolio">
+									<li ng-repeat="image in images.raw track by $index" image-viewer><img ng-click="show_picture($index, images.raw)" ng-src="{{image.url}}"/></li>
+								</ul>
+							</div>
+							<button class="btn btn-primary" ng-if="hasPrevious()" ng-click="previousPage()"> Previous </button>
+							<button class="btn btn-primary" ng-if="hasNext()" ng-click="nextPage()"> Next </button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- VIDEO TABS -->
+<section class="blue_arrows_box">
+	<div class="arrows">
+		<svg viewBox="0 0 32 32" class="arrow_down" id="news_arrow_next" data-id="videoSection">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#right-arrow"></use></svg>
+		<svg viewBox="0 0 32 32" class="arrow_up" id="news_arrow_back" data-id="homepage_text">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#left-arrow"></use></svg>
+	</div>
+</section>
+<!-- Section #3 -->
+<section id="lifelogVideos" data-speed="2" data-type="background">
+	<div id="videoSection">
+		<div class="container">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="panel mypanel">
+						<div class="panel-heading">
+							<h2 class="panel-title" style="font-size: 24px" ng-show="loggedUser">{{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Videos
+							</h2>
+							<h2 class="panel-title" style="font-size: 24px" ng-show="!loggedUser">Lifelog Videos
+							</h2>
+						</div>
+						<div class="panel-body headText">
+							<div ng-show="!videos || videos.keys.length == 0" style="padding: 1px 3px 1px 10px"><h4>No videos, select a different filter or upload some.</h4></div>
+							<div ng-repeat="date in videos.keys">
+								<ul class="videosss">
+									<li ng-repeat="video in videos[date] track by $index">
+										<video controls>
+											<source ng-src="{{video.url}}" type="video/mp4">
+											Your browser does not support the video tag.
+										</video>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- GPS TAB -->
+<section class="arrows_box">
+	<div class="arrows">
+		<svg viewBox="0 0 32 32" class="arrow_up" id="lifelog_arrow_back" data-id="imgSection">
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#left-arrow"></use></svg>
+	</div>
+</section>
+<section id="heatmapSection" data-speed="4" data-type="background">
+	<div id="gpsSection">
+		<div class="container">
+			<div class="row">
+				<div class="panel bluePlaceholder">
+					<div class="panel-heading">
+						<h2 class="panel-title" style="font-size: 24px; color:white" ng-show="loggedUser">{{loggedUser.username || loggedUser.email | capitalize:true}}`s Heat Map & Trending Locations
+						</h2>
+						<h2 class="panel-title" style="font-size: 24px; color:white" ng-show="!loggedUser">Heat Map & Trending Locations
+						</h2>
+					</div>
+					<div class="panel-body bodyText">
+						
+						<div maphome></div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Recommend TABS -->
+<div class="arrows">
+	<svg viewBox="0 0 32 32" class="arrow_up" id="lifelog_arrow_back" data-id="videoSection">
+	<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#left-arrow"></use></svg>
+</div>

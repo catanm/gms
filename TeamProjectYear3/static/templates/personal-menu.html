@@ -1,0 +1,33 @@
+<!-- Navigation bar -->
+<ul class="nav nav-pills nav-stacked navbar-menu">
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.images" style=cursor:pointer>
+			{{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Images
+		</a>
+	</li>
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.videos" style=cursor:pointer>
+			{{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Videos
+		</a>
+	</li>
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.gps"    style=cursor:pointer>
+			{{loggedUser.username || loggedUser.email | capitalize:true}}`s Heat Map & Trails Diary
+		</a>
+	</li>
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.images_gps" style=cursor:pointer>
+			{{loggedUser.username || loggedUser.email | capitalize:true}}`s Image Mapping
+		</a>
+	</li>
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.recommendation" style=cursor:pointer>
+			Recommendations for {{loggedUser.username || loggedUser.email | capitalize:true}}
+		</a>
+	</li>
+	<li role="presentation" ui-sref-active="active">
+		<a ui-sref="main.personal.keymoments" style=cursor:pointer>
+			{{loggedUser.username || loggedUser.email | capitalize:true}}`s Key Moments
+		</a>
+	</li>
+</ul>

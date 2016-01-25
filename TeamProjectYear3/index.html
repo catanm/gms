@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" ng-init="images=true">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GMS Home</title>
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://rawgithub.com/mgcrea/bootstrap-additions/master/dist/bootstrap-additions.min.css">
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="static/libs/jsDatePick_ltr.min.css" /> -->
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/datetimepicker.css" />
+    <link rel="stylesheet" href="static/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="static/css/navbar.css" type="text/css"/>
+    <!-- Custom styles for this template  from GMS-->
+    <!-- <link href="static/css/clndr.css" rel="stylesheet"> -->
+    <link href="static/css/my-navbar.css" rel="stylesheet">
+    <link href="static/css/arrow.css" rel="stylesheet">
+    <!-- <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!--  <script src="static/js/ie-emulation-modes-warning.js"></script> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-cookies.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular-animate.min.js"></script>
+    <script src="static/js/angular-ui-router.min.js"></script>
+    <script src="static/js/controllers.js"></script>
+    <script src="static/js/script.js"></script>
+    <!-- Google maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+    
+    <!--  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script> -->
+    <!-- Calendar js -->
+    <script src="static/js/moment.js"></script>
+    <script src="static/js/datetimepicker.js"></script>
+    <!-- Upload -->
+    <!-- <script src="static/js/angular-file-upload.js"></script> -->
+    <script src="static/js/angular-file-upload-shim.min.js"></script>
+    <script src="static/js/angular-file-upload.min.js"></script>
+    <!-- Range Calendar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.1.2/angular-strap.tpl.min.js"></script>
+    <script src="static/js/scripts.js"></script>
+
+    <script src="static/js/Chart.min.js"></script>
+    <link href="static/css/clndr.css" rel="stylesheet">
+    
+  </head>
+  <body ng-app="mainModule" ng-controller="master">    <!-- 1 column whitespace to the left -->
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-source" height="0" version="1.1" style="position:absolute; margin-left: -100%">
+    <g id="arrow-left1" data-iconmelon="Simple Line Icons:84cb3b40db596f8af69381544e0f9b4d">
+      <g>
+        <path d="M21.783,7.713H1.959l2.879-2.875c0.224-0.225,0.224-0.588,0-0.812c-0.225-0.225-0.589-0.225-0.812,0
+          L0.17,7.885C0.061,7.989,0,8.136,0,8.288c0,0.151,0.061,0.3,0.17,0.406l3.855,3.853c0.112,0.112,0.26,0.168,0.404,0.168
+          c0.147,0,0.293-0.056,0.408-0.168c0.224-0.225,0.224-0.588,0-0.812L1.959,8.862h19.824c5.002,0,9.07,4.066,9.07,9.063
+          c0,5.002-4.068,9.07-9.07,9.07H4.43c-0.314,0-0.571,0.256-0.571,0.574c0,0.316,0.257,0.572,0.571,0.572h17.354
+        C27.417,28.143,32,23.561,32,17.926C32,12.297,27.417,7.713,21.783,7.713z"></path>
+      </g>
+    </g>
+    <g id="right-arrow" data-iconmelon="Simple Line Icons:9f66c26e7b4c34add2ea88c437a072be">
+      <g>
+        <path d="M16.291,0.005l-0.298-0.001c-8.662,0-15.832,7.046-15.99,15.705c-0.08,4.272,1.513,8.317,4.479,11.395
+          c2.968,3.076,6.954,4.815,11.227,4.891l0.299,0.003h0.003c8.655,0,15.823-7.046,15.987-15.704
+          C32.153,7.469,25.108,0.162,16.291,0.005z M16.007,30.847l-0.279-0.001c-3.964-0.071-7.666-1.682-10.42-4.537
+          c-2.753-2.855-4.23-6.613-4.159-10.577C1.297,7.694,7.955,1.154,15.993,1.154l0.276,0.001c8.183,0.146,14.724,6.927,14.579,15.112
+        C30.703,24.309,24.042,30.847,16.007,30.847z"></path>
+        <path d="M23.984,15.738l-7.433-7.712c-0.223-0.229-0.58-0.233-0.812-0.015c-0.225,0.219-0.236,0.582-0.018,0.811
+          l6.479,6.717l-13.769-0.25c-0.003,0-0.006,0-0.009,0c-0.314,0-0.571,0.252-0.574,0.562c-0.006,0.319,0.246,0.58,0.563,0.588
+          l13.761,0.247l-6.711,6.479c-0.227,0.219-0.232,0.583-0.014,0.812c0.112,0.114,0.264,0.174,0.414,0.174
+        c0.145,0,0.287-0.052,0.398-0.161l8.123-7.837l-0.396-0.413C23.984,15.74,23.984,15.738,23.984,15.738z"></path>
+      </g>
+    </g>
+    <g id="left-arrow" data-iconmelon="Simple Line Icons:17ac1bec96560f90401d78ea150b583c">
+      <g>
+        <path d="M16.29,0.002L15.994,0C7.335,0,0.16,7.049,0.005,15.709c-0.082,4.273,1.511,8.318,4.476,11.398
+          c2.967,3.076,6.955,4.813,11.229,4.892L16.006,32l0,0c8.659,0,15.833-7.048,15.989-15.707c0.079-4.275-1.511-8.319-4.477-11.397
+          C24.551,1.816,20.563,0.082,16.29,0.002z M16.006,30.853l-0.277-0.004c-3.964-0.069-7.666-1.683-10.418-4.539
+          c-2.756-2.855-4.23-6.613-4.159-10.578C1.296,7.69,7.953,1.149,15.994,1.149l0.273,0.003c3.968,0.068,7.667,1.683,10.422,4.541
+        c2.753,2.854,4.23,6.611,4.159,10.574C30.703,24.311,24.044,30.853,16.006,30.853z"></path>
+        <path d="M23.587,15.563L9.819,15.314l6.714-6.479c0.23-0.22,0.235-0.585,0.017-0.811
+          c-0.219-0.229-0.585-0.234-0.812-0.015l-8.126,7.836l0.396,0.413c0.003,0,0.003,0.003,0.003,0.003l7.439,7.716
+          c0.112,0.115,0.263,0.174,0.413,0.174c0.143,0,0.287-0.053,0.399-0.162c0.228-0.22,0.232-0.584,0.014-0.811l-6.479-6.718
+        l13.769,0.249c0.005,0,0.008,0,0.011,0c0.312,0,0.566-0.25,0.574-0.562C24.156,15.83,23.904,15.568,23.587,15.563z"></path>
+      </g>
+    </g>
+    
+    <g id="arrow-left" data-iconmelon="Simple Line Icons:85d8e0fe3e63b993bd72f47752368cd6">
+      <g>
+        <path d="M16.003,0C7.18,0,0,7.176,0,15.999C0,24.822,7.18,32,16.003,32C24.823,32,32,24.822,32,15.999
+          C32,7.176,24.823,0,16.003,0z M16.003,30.852c-8.188,0-14.854-6.665-14.854-14.854c0-8.188,6.665-14.849,14.854-14.849
+        c8.186,0,14.851,6.661,14.851,14.849C30.854,24.187,24.188,30.852,16.003,30.852z"></path>
+        <path d="M20.191,8.017c-0.225-0.223-0.586-0.223-0.81,0l-7.979,7.981l7.979,7.984
+          c0.112,0.112,0.257,0.168,0.405,0.168c0.147,0,0.295-0.056,0.404-0.168c0.225-0.225,0.225-0.587,0-0.812l-7.165-7.173l7.165-7.169
+        C20.416,8.605,20.416,8.242,20.191,8.017z"></path>
+      </g>
+    </g>
+    <g id="arrow-right" data-iconmelon="Simple Line Icons:b11fd5edd69f44cef01f6dba7f72aebc">
+      <g>
+        <path d="M16.003,0C7.177,0,0,7.178,0,16.003C0,24.825,7.177,32,16.003,32C24.823,32,32,24.825,32,16.003
+          C32,7.178,24.823,0,16.003,0z M16.003,30.852c-8.191,0-14.856-6.662-14.856-14.849c0-8.19,6.665-14.854,14.856-14.854
+        c8.186,0,14.848,6.663,14.848,14.854C30.851,24.19,24.188,30.852,16.003,30.852z"></path>
+        <path d="M11.806,8.017c-0.225,0.225-0.225,0.588,0,0.812l7.174,7.174l-7.174,7.168
+          c-0.225,0.225-0.225,0.587,0,0.812c0.112,0.112,0.26,0.168,0.407,0.168c0.146,0,0.293-0.056,0.405-0.168l7.983-7.979l-7.983-7.986
+        C12.395,7.794,12.03,7.794,11.806,8.017z"></path>
+      </g>
+    </g>
+    
+    <g id="arrow-left1" data-iconmelon="Simple Line Icons:84cb3b40db596f8af69381544e0f9b4d">
+      <g>
+        <path d="M21.783,7.713H1.959l2.879-2.875c0.224-0.225,0.224-0.588,0-0.812c-0.225-0.225-0.589-0.225-0.812,0
+          L0.17,7.885C0.061,7.989,0,8.136,0,8.288c0,0.151,0.061,0.3,0.17,0.406l3.855,3.853c0.112,0.112,0.26,0.168,0.404,0.168
+          c0.147,0,0.293-0.056,0.408-0.168c0.224-0.225,0.224-0.588,0-0.812L1.959,8.862h19.824c5.002,0,9.07,4.066,9.07,9.063
+          c0,5.002-4.068,9.07-9.07,9.07H4.43c-0.314,0-0.571,0.256-0.571,0.574c0,0.316,0.257,0.572,0.571,0.572h17.354
+        C27.417,28.143,32,23.561,32,17.926C32,12.297,27.417,7.713,21.783,7.713z"></path>
+      </g>
+    </g>
+    <g id="right-arrow" data-iconmelon="Simple Line Icons:9f66c26e7b4c34add2ea88c437a072be">
+      <g>
+        <path d="M16.291,0.005l-0.298-0.001c-8.662,0-15.832,7.046-15.99,15.705c-0.08,4.272,1.513,8.317,4.479,11.395
+          c2.968,3.076,6.954,4.815,11.227,4.891l0.299,0.003h0.003c8.655,0,15.823-7.046,15.987-15.704
+          C32.153,7.469,25.108,0.162,16.291,0.005z M16.007,30.847l-0.279-0.001c-3.964-0.071-7.666-1.682-10.42-4.537
+          c-2.753-2.855-4.23-6.613-4.159-10.577C1.297,7.694,7.955,1.154,15.993,1.154l0.276,0.001c8.183,0.146,14.724,6.927,14.579,15.112
+        C30.703,24.309,24.042,30.847,16.007,30.847z"></path>
+        <path d="M23.984,15.738l-7.433-7.712c-0.223-0.229-0.58-0.233-0.812-0.015c-0.225,0.219-0.236,0.582-0.018,0.811
+          l6.479,6.717l-13.769-0.25c-0.003,0-0.006,0-0.009,0c-0.314,0-0.571,0.252-0.574,0.562c-0.006,0.319,0.246,0.58,0.563,0.588
+          l13.761,0.247l-6.711,6.479c-0.227,0.219-0.232,0.583-0.014,0.812c0.112,0.114,0.264,0.174,0.414,0.174
+        c0.145,0,0.287-0.052,0.398-0.161l8.123-7.837l-0.396-0.413C23.984,15.74,23.984,15.738,23.984,15.738z"></path>
+      </g>
+    </g>
+    <g id="left-arrow" data-iconmelon="Simple Line Icons:17ac1bec96560f90401d78ea150b583c">
+      <g>
+        <path d="M16.29,0.002L15.994,0C7.335,0,0.16,7.049,0.005,15.709c-0.082,4.273,1.511,8.318,4.476,11.398
+          c2.967,3.076,6.955,4.813,11.229,4.892L16.006,32l0,0c8.659,0,15.833-7.048,15.989-15.707c0.079-4.275-1.511-8.319-4.477-11.397
+          C24.551,1.816,20.563,0.082,16.29,0.002z M16.006,30.853l-0.277-0.004c-3.964-0.069-7.666-1.683-10.418-4.539
+          c-2.756-2.855-4.23-6.613-4.159-10.578C1.296,7.69,7.953,1.149,15.994,1.149l0.273,0.003c3.968,0.068,7.667,1.683,10.422,4.541
+        c2.753,2.854,4.23,6.611,4.159,10.574C30.703,24.311,24.044,30.853,16.006,30.853z"></path>
+        <path d="M23.587,15.563L9.819,15.314l6.714-6.479c0.23-0.22,0.235-0.585,0.017-0.811
+          c-0.219-0.229-0.585-0.234-0.812-0.015l-8.126,7.836l0.396,0.413c0.003,0,0.003,0.003,0.003,0.003l7.439,7.716
+          c0.112,0.115,0.263,0.174,0.413,0.174c0.143,0,0.287-0.053,0.399-0.162c0.228-0.22,0.232-0.584,0.014-0.811l-6.479-6.718
+        l13.769,0.249c0.005,0,0.008,0,0.011,0c0.312,0,0.566-0.25,0.574-0.562C24.156,15.83,23.904,15.568,23.587,15.563z"></path>
+      </g>
+    </svg>
+    <div ui-view></div>
+    
+  </body>
+</html>

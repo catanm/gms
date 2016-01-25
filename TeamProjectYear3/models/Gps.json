@@ -1,0 +1,8 @@
+{
+	id: ObjectId, // handled by mongo or ODM
+	user: ObjectId, // link to the uploader
+	lat: Double, // Probably
+	lon: Double, // Probably
+	timeStamp: Date,
+	direction: Double // Probably
+}

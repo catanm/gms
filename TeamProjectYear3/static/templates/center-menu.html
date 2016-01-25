@@ -1,0 +1,26 @@
+<!-- Navigation bar -->
+<script src="static/js/scripts.js"></script>
+<!-- Not logged user -->
+<ul id = "main-nav" class="nav nav-pills nav-stacked" ng-show="!loggedUser">
+    <li class="active"><a href="#"  class="scroll-link" data-id="imgSection">Sample Lifelog Images</a></li>
+    <li><a href="#" class="scroll-link" data-id="videoSection">Sample Lifelog Videos</a></li>
+    <li><a href="#" class="scroll-link" data-id="gpsSection">Heat Map & Trending Locations</a></li>
+</ul>
+<!-- Logged User -->
+<ul id = "main-nav" class="nav nav-pills nav-stacked" ng-show="loggedUser">
+    <li class="active">
+        <a href="#"  class="scroll-link" data-id="imgSection">
+            {{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Images
+        </a>
+    </li>
+    <li>
+        <a href="#" class="scroll-link" data-id="videoSection">
+            {{loggedUser.username || loggedUser.email | capitalize:true}}`s Lifelog Videos
+        </a>
+    </li>
+    <li>
+        <a href="#" class="scroll-link" data-id="gpsSection">
+            {{loggedUser.username || loggedUser.email | capitalize:true}}`s Heat Map & Trending Locations
+        </a>
+    </li>
+</ul>

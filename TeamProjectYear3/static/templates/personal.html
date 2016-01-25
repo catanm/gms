@@ -1,0 +1,20 @@
+<!-- Images -->
+<div style="padding-left:0">
+	<div class="modal fade" id="viewerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" style="width:500px">
+			<div class="modal-content">
+				<div class="slider">
+					<ul>
+						<li class="slide" ng-repeat="image in previewImages" ng-show="image.visible">
+							<img class="slideImages" ng-src="{{image.url}}" />
+						</li>
+					</ul>
+					<div class="arrows">
+						<a ng-click="prev()"><img src="static/img/left.png"/></a>
+						<a ng-click="next()"><img src="static/img/right.png"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

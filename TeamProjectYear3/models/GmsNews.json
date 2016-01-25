@@ -1,0 +1,19 @@
+{
+	id: ObjectId,
+	title: String,
+	description: String,
+	timeStamp: Date,
+	category: String,
+	url: String,
+	source: String,
+	mainStory: String,
+	images: [ ObjectId ], // ids of images name and caption?
+	videos: [ ObjectId ], // ids of videos name and caption?
+	relatedStories: [
+		{
+			title: String,
+			url: String
+		}
+	],
+	comments: [ ObjectId ] // ids of comments (only main comment, no replies)
+}

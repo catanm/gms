@@ -1,0 +1,13 @@
+<div class="panel-body headText">
+	<h2 class="personalTitle">A Glimpse of Your Visited Locations</h2>
+	<h4 class="personalSubtitle">
+	You can view a heat map of your location or trails diary
+	<br>
+	Pick a <span style="font-weight: bolder">date range</span> to explore more
+	</h4>
+</div>
+<div style="text-align: center">
+	<button class="btn btn-primary" ng-click="setMapType('heatmap')">Heatmap</button>
+	<button class="btn btn-primary" ng-click="setMapType('kmlfile')">Trails Diary</button>
+</div>
+<div map></div>
